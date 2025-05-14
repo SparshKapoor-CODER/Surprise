@@ -1,0 +1,230 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sacramento', cursive;
+    color: #fff;
+    /* Pastel gradient background with slow animation */
+    background: linear-gradient(135deg, #ce4971, #1fc8db);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+  
+  /* Gradient Animation */
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Container */
+  .container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    max-width: 650px;
+    margin: 100px auto;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+  }
+  
+  .container:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s;
+  }
+  
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.2rem;
+    margin: 0;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .sub-message {
+    font-size: 1.3rem;
+    margin: 10px 0 30px;
+  }
+  
+  /* Gifts Section */
+  h2 {
+    margin-top: 30px;
+    font-size: 2rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  /* Gift links: Darker pink for course names */
+  #gifts-list a {
+    color: #c71585;  /* Darker pink (Medium Violet Red) */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  #gifts-list a:hover {
+    background-color: #ffffff66;
+    color: #b03070;  /* Slightly darker on hover */
+  }
+  
+  /* Music Toggle Button */
+  #toggle-music {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffeb99;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #toggle-music:hover {
+    background-color: #ffd966;
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Cake Styling */
+  .cake-wrapper {
+    margin: 30px auto;
+    width: 220px;
+    height: 130px;
+    position: relative;
+  }
+  
+  .cake {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .layer {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .layer-bottom {
+    bottom: 0;
+    height: 80px;
+    background: #f7a1c4;
+    z-index: 1;
+  }
+  
+  .layer-middle {
+    bottom: 70px;
+    height: 70px;
+    background: #f9c5d5;
+    z-index: 2;
+  }
+  
+  .layer-top {
+    bottom: 130px;
+    height: 60px;
+    background: #fff0f5;
+    z-index: 3;
+    border-top-left-radius: 50% 20px;
+    border-top-right-radius: 50% 20px;
+    box-shadow: inset 0 8px #ffe6f2;
+  }
+  
+  /* Candle */
+  .candle {
+    width: 16px;
+    height: 60px;
+    background: #ff9fb4;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 6px;
+    z-index: 4;
+  }
+  
+  /* Flame */
+  .flame {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 14px;
+    height: 20px;
+    background: radial-gradient(circle at 50% 50%, #ffcc66, #ff9966);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: flameFlicker 1s infinite alternate;
+    box-shadow: 0 0 15px #ffb366;
+  }
+  
+  /* Flame Flicker Animation */
+  @keyframes flameFlicker {
+    0% { transform: translateX(-50%) scale(1); opacity: 1; }
+    100% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
+  }
+  
+  /* Cake Bounce */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  /* Apply bounce to the cake */
+  .cake-wrapper {
+    animation: bounce 3s infinite ease-in-out;
+  }
+  
+  /* Pastel Confetti */
+  @keyframes confettiAnimation {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(150px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  .confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ffb6c1;
+    border-radius: 50%;
+    animation: confettiAnimation 4s linear infinite;
+    opacity: 0.8;
+  }
+  
+  .confetti:nth-child(2n) {
+    background-color: #ffdfd3;
+  }
+  
+  .confetti:nth-child(3n) {
+    background-color: #ffe4e1;
+  }
+  
